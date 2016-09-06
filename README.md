@@ -1,8 +1,43 @@
 # SiteMind Open Source Website Intelligence 
 
+### WHAT IS IT
+
+Domain research tool targeting media planners and reseaerchers, specifically built for countering ad fraud in media investment.
+
+### FEATURE HIGHLIGHTS
+
+- intuitive 'buy score' system for website rating
+- search any domain
+- returns result usually in 1 to 2 seconds
+- up to 150 data points per site from 5 different sources
+- easy to use API with ready end-points for all common languages
+
+### CONTENTS OF THE PACKAGE 
+
+Everything goes in to /var/www/html or whatever is your public html directory. 
+
+There are a couple of new folders created...
+
+/var/www/html/
+	     /admin
+	     /dev
+	     /sitemind 
+
+...together with their sub-folders.
+
+The document root only contains the README.md file. 
+
+/admin = where the admin functionality related scripts live
+/dev = the dev instance (which is copied to user accounts)
+/sitemind = main program folder where program scripts live
+
+Again, when new users are created after installation, all such installations will be copies of /dev. Each user will have their own folder which is initially a replica of /dev. 
+
+### GETTING STARTED 
+
 The following installation instructions have been tested on Ubuntu 14.04 clean distro. 
 
-##### Install dependencies
+#### Install dependencies
 
 	sudo apt-get update
 	sudo apt-get install -y apache2
@@ -12,7 +47,7 @@ The following installation instructions have been tested on Ubuntu 14.04 clean d
 	sudo apt-get install -y num-utils
 	sudo apt-get install -y git 
 
-##### Getting the files and setting it up
+#### Getting the files and setting it up
 
 	wget https://github.com/SiteMindOpen/SiteMind/archive/master.zip
 	unzip master.zip
@@ -22,11 +57,11 @@ The following installation instructions have been tested on Ubuntu 14.04 clean d
 
 After the initial setup, as long as you create new users with SiteMind command line command 'sm-user-new', permissions will be handled automatically and is not something you need to think about. 
 
-##### Creating an admin user
+#### Creating an admin user
 
 	PASSWORD=$(openssl rand -base64 20); htpasswd ./etc/apache2/.htpasswd -cbB admin "$PASSWORD"; echo -e "Your password is $PASSWORD";
 
-##### Restart apache
+#### Restart apache
 
 Ubuntu 14.04:
     
@@ -37,7 +72,7 @@ Ubuntu 16.04:
     systemctl apache restart
 
 
-##### Setup https with letsencrypt 
+#### Setup https with letsencrypt 
 
 Letencrypt makes it incredibly easy (and fast) to setup functional https for your site. 
 
@@ -50,7 +85,7 @@ Note that for the below to work, you need to have a valid domain name that is po
 NOTE: as part of the setup process, there will be a prompt asking if you want to redirect all requests to https. I think this should be on for most cases.
 
 
-##### Environment variables for SiteMind
+#### Environment variables for SiteMind
 
 Add the following lines to your .bashrc file. 
 
@@ -66,3 +101,10 @@ Learn more about the admin command line features here:
 https://github.com/SiteMindOpen/SiteMind/blob/master/admin/README.md
 
 
+#### Running SiteMind locally on Mac OS X
+
+If you're a mac user, go the public directory of the web server (/var/www/html) and exexcute the below command: 
+
+    sudo php -S 127.0.0.1:80 && /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --app="http://127.0.0.1/dev/index.html" --window-size="1000x800"
+
+This same will obviously work on Linux and Windows, but the command will be something different. 
