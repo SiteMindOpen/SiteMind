@@ -33,5 +33,6 @@ HOME=~/git/sitemind
 	git add *
 	git commit -m "$VERSION commit on "$DATE""
 
-	eval `ssh-agent -s` && ssh-add ~/.ssh/git;
+	eval `ssh-agent -s` && ssh-add ~/.ssh/git
 	git push origin master
+	git push origin master --tags
