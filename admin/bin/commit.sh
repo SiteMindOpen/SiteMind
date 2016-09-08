@@ -3,7 +3,7 @@
 GITDIR=~/git/sitemind/
 DATE=`date +%d%m%y`
 BACKUP=~/backup/commit_"$DATE"/
-VERSION=$(sm-commit-version)
+VERSION=`sm-commit-version`
 
 CHECK0=$(pwd)
 CHECK1=$(ls ~/backup/commit_"$DATE")
