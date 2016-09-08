@@ -10,11 +10,11 @@ CHECK1=$(ls ~/backup/commit_"$DATE")
 CHECK2=$(git tag | grep fatal | tr -d ' ')
 HOME=~/git/sitemind
 
-	if [ -z $CHECK1]; then
+	if [ -z $CHECK1 ]; then
 		mkdir ~/backup/commit_"$DATE"/
 	fi
 
-	if [ -n $CHECK2]; then
+	if [ -n $CHECK2 ]; then
 		git init
 	fi
 
