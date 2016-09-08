@@ -29,7 +29,7 @@ HOME=~/git/sitemind
 
 	cd $HOME
 
-	git tag -a v"$VERSION" -m "version "$VERSION""
+	git tag -a "$VERSION" -m "version "$VERSION""
 	git add *
 	git commit -m "$VERSION commit on "$DATE""
 
