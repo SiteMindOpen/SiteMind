@@ -1,9 +1,9 @@
 #!/bin/bash
 
-CURRENT=$(git log --oneline --decorate --color | head -1 | cut -d ')' -f2 | cut -d ' ' -f2)
-VERSION3=$(echo $CURRENT | rev | cut -d. -f1);
-VERSION2=$(echo $CURRENT | rev | cut -d. -f2);
-VERSION1=$(echo $CURRENT | rev | cut -d. -f3);
+CURRENT=$(git tag | tail -1)
+VERSION3=$(echo $CURRENT | cut -d. -f3);
+VERSION2=$(echo $CURRENT | cut -d. -f2);
+VERSION1=$(echo $CURRENT | cut -d. -f1 | tr -d ' ');
 
 if [ $VERSION3 -ge 9 ]; then
 	OUTPUT3=0
