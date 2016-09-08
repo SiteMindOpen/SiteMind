@@ -6,7 +6,7 @@ BACKUP=~/backup/commit_"$DATE"/
 VERSION=$(/var/www/html/admin/bin/commit-version.sh)
 
 CHECK0=$(pwd)
-CHECK1=$(ls ~/backup/commit_"$DATE" | cut -d ' ' -f1)
+CHECK1=$(ls ~/backup/commit_"$DATE" | head -1)
 CHECK2=$(git tag | grep fatal | tr -d ' ')
 HOME=~/git/sitemind
 
