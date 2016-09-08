@@ -22,10 +22,14 @@ backup_conf(){
 
 header_ssl(){
 	echo -e "<IfModule mod_ssl.c>"
+	echo -e "<VirtualHost *:443>"
+}
+
+header_nossl(){
+        echo -e "<VirtualHost *:80>"
 }
 
 header_common(){ # builds the header part of the apache conf file
-	echo -e "<VirtualHost *:80>"
 	echo -e "        ServerAdmin webmaster@localhost"
 	echo -e "        DocumentRoot /var/www/html"
 	echo -e "        ErrorLog \${APACHE_LOG_DIR}/error.log"
@@ -85,6 +89,7 @@ ssl_conf(){
 }
 
 nossl_conf(){
+	header_nossl
 	header_common
 	entries
 	footer_nossl
