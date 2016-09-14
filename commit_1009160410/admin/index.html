@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../graphics/favicon.ico">
+    <title>SiteMind | Website Intelligence for Ad Fraud Research and Media Planning</title>
+    <link href="../style/bootstrap.min.css" rel="stylesheet">
+    <link href="../style/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <link href="../style/cover.css" rel="stylesheet">
+    <script src="../js/ie-emulation-modes-warning.js"></script>
+  </head>
+  <body>
+    <div class="site-wrapper">
+      <div class="site-wrapper-inner">
+        <div class="cover-container">
+          <div class="masthead clearfix">
+            <div class="inner">
+              <h3 class="masthead-brand"></h3>
+              <nav>
+                <ul class="nav masthead-nav">
+                  <li><a href="../index.html">Home</a></li>
+                  <li><a href="../features.html">Invite</a></li>
+                  <li><a href="../invite.html">Invite</a></li>
+                  <li><a class="active" href="#">Admin</a></li>
+                  <li><input class="logininput" placeholder="username" size="30" type="text" name="username" id="username" required/></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+          	<h2>create new user</h2>
+			<form action=form_newuser.php method=post>
+				<input class="inputnew" size='50' type='text' name='username' id='username' class='form-control' placeholder='new username'/><br>
+				<input class="inputnew" size='50' type='password' name='pw1' id='pw1' class='form-control' placeholder='user password'/><br>
+				<input class="inputnew" size='50' type='password' name='pw2' id='pw2' class='form-control' placeholder='confirm password'/><br><br> 
+				<span style="width: 10%;"><input type='checkbox' value="auto" name='autopw' id='autopw' checked/> Auto generate password (password fields can be left empty)</span>
+<br><input type="submit">			
+</form>
+
+
