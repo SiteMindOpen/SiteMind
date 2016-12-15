@@ -15,27 +15,27 @@ In the environment of the host machine, include the following alias commands:
 
 Usually you can find the file from ~/ under the name .bashrc. Add the above lines in to the file and next time you login to the host, the following commands will be available anywhere in your system: 
 
-##### sm-sync
+#### sm-sync
 
 Syncs all the user accounts with /dev.
 
-##### sm-user-list
+#### sm-user-list
 
 Prints out a list of user accounts. 
 
-##### sm-monitor
+#### sm-monitor
 
 Creates a report out of access and error logs from the on going day's logs. 
 
-##### sm-user-new
+#### sm-user-new
 
 Creates a new user in to the system and prints out a randomly generated password for the user. 
 
 EXAMPLE USAGE (where we want to create a user 'john':
 
-    sm-newuser john
+    sm-user-new john
 
-##### sm-user-rm
+#### sm-user-rm
 
 Removes a user and all associated files from the system (Use with caution!).
 
