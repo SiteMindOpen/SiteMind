@@ -26,8 +26,6 @@ PROCESS FLOW
 5) 
 
 
-
-
 -------------
 DATA TAXONOMY
 -------------
@@ -156,3 +154,17 @@ SiteMind provides a fully automated method for the "gold standard" way of fetchi
 1) Gets to main record from the tld level registar including the registar that holds the sub-record 
 2) Gets the sub-record from the holding registar 
 
+------------------
+CODING CONVENTIONS
+------------------
+
+The code is almost 100% bash and certain principles have been followed where possible: 
+
+- code starts one tab intend deep
+- each script (.sh file) represents a step in the process flow
+- no more than 50 lines of code per script 
+- no more than 50 characters long lines of code
+- functions first, program second, cleanup last 
+- mininal comments - instead self-explaining code 
+
+It should be very easy for anyone with beginner+ level in bash to modify the code that is already there, to add new code to improve current functionality, or add completely new functionality. 
