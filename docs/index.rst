@@ -186,6 +186,12 @@ SiteMind provides a fully automated method for the "gold standard" way of fetchi
 PROCESS FLOW 
 ---------------
 
+
+1) User provides input through the search field in the UI
+       - > form_process.php
+       - > run.sh 
+
+
 1) User provides input 
 2) System detects if there is single or multiple domains in the input
 3) System checks if recent cache already has a result and if yes moves to step NNN
@@ -204,7 +210,6 @@ For **UI related** download the program folder to a local machine and run a PHP 
 If you've setup properly, then you can easily see related error logs on the server-side using:: 
 
        ./sm-monitor
-
 
 ---------------
 RUNNING LOCALLY
