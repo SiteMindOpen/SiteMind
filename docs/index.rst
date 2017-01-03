@@ -273,7 +273,7 @@ The following installation instructions have been tested on Ubuntu 16.04 clean d
 	sudo apt-get install -y num-utils
 	sudo apt-get install -y git 
 
-**Getting the source files and setting it up**:
+**Getting the source files and setting it up**::
 
 	wget https://github.com/SiteMindOpen/SiteMind/archive/master.zip
 	unzip master.zip
@@ -289,11 +289,11 @@ After the initial setup, as long as you create new users with SiteMind command l
 
 **Restart apache**
 
-Ubuntu 14.04:
+Ubuntu 14.04::
     
     service apache2 restart
 
-Ubuntu 16.04: 
+Ubuntu 16.04::
 
     systemctl apache restart
 
