@@ -2,6 +2,29 @@
 SiteMind Open
 =============
 
+Domain research tool targeting media planners and reseaerchers, specifically built for countering ad fraud and reducing its impact on media investment. Returns a result with up to 40 signals for any site typically in 1-3 seconds.
+
+--------------------
+OVERVIEW OF FUNCTION
+--------------------
+
+SiteMind allows two different kinds of searches to be performed by the user: 
+
+- type-1: where a single domain name is the input 
+- type-2: where a comma separated list of domain names is the input 
+
+In both cases the system performs a series of operations resulting in up to 40 signals, which are then stored in a .csv file. Depending on the type of search, the result will then be returned either as a simple user interface, or a table with results for multiple sites. 
+
+---------------
+PROCESS FLOW 
+---------------
+
+1) User provides input 
+2) System detects if there is single or multiple domains in the input
+3) System checks if recent cache already has a result and if yes moves to step NNN
+4) If there is no result in the cache the primary cycle starts 
+5) 
+
 
 
 
@@ -11,9 +34,13 @@ DATA TAXONOMY
 
 The below table shows all the signals that are currently available through SiteMind. All variables are available through the scan function in the resulting .csv file, or in the user interface resulting from a single site search. 
 
-**VARIABLE NAME** is the name of the variable as it is 
+NOTE: Different naming may be used in the user interfaces, and this is easily changed. 
 
+**VARIABLE NAME** is the name of the variable as it is found in the output file resulting from a search of scan. 
 
+**SOURCE** is the reference to where the data is originating from. In the case the filed says 'sitemind' it means that the signal is inferred from other data. 
+
+**COLUMN NUMBER** is only for development purpose and is used in the UI codes to to present a certain signal in a given place in the user interface. 
 
 
 +------------------------+-------------+---------+
