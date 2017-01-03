@@ -4,6 +4,18 @@ SiteMind Open
 
 Domain research tool targeting media planners and reseaerchers, specifically built for countering ad fraud and reducing its impact on media investment. Returns a result with up to 40 signals for any site typically in 1-3 seconds.
 
+------------------
+FEATURE HIGHLIGHTS
+------------------
+
+intuitive 'buy score' system for website rating
+search any domain
+returns result usually in 1 to 2 seconds
+up to 150 data points per site from 5 different sources
+easy to use API with ready end-points for all common languages
+
+
+
 --------------------
 OVERVIEW OF FUNCTION
 --------------------
@@ -243,6 +255,61 @@ NOTE: In a multi-user system, each user has a self-contained replica of the prog
 +-----------------+------------------------------+
 | /cms/templates  | Header and Footer for UI     |
 +-----------------+------------------------------+
+
+
+---------------
+GETTING STARTED
+---------------
+
+The following installation instructions have been tested on Ubuntu 16.04 clean distro. 
+
+**Install dependencies**::
+
+	sudo apt-get update
+	sudo apt-get install -y apache2
+	sudo apt-get install -y php5 
+	sudo apt-get install -y unzip
+	sudo apt-get install -y parallel 
+	sudo apt-get install -y num-utils
+	sudo apt-get install -y git 
+
+**Getting the source files and setting it up**:
+
+	wget https://github.com/SiteMindOpen/SiteMind/archive/master.zip
+	unzip master.zip
+	sudo rsync -av ~/SiteMind-master/ /var/www/html
+
+	chown -R www-data:www-data /var/www/html && chmod -R g+rw /var/www/html
+
+After the initial setup, as long as you create new users with SiteMind command line command 'sm-user-new', permissions will be handled automatically and is not something you need to think about. 
+
+**Creating an admin user**::
+
+	PASSWORD=$(openssl rand -base64 20); htpasswd ./etc/apache2/.htpasswd -cbB admin "$PASSWORD"; echo -e "Your password is $PASSWORD";
+
+**Restart apache**
+
+Ubuntu 14.04:
+    
+    service apache2 restart
+
+Ubuntu 16.04: 
+
+    systemctl apache restart
+
+
+Setup https with letsencrypt 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Letencrypt makes it incredibly easy (and fast) to setup functional https for your site. 
+
+Note that for the below to work, you need to have a valid domain name that is pointed to the server you're initiating the below command from::
+
+	sudo git clone https://github.com/letsencrypt/letsencrypt /opt/letsencrypt
+	cd /opt/letsencrypt
+	./letsencrypt-auto --apache -d yoursite.com
+
+NOTE: as part of the setup process, there will be a prompt asking if you want to redirect all requests to https. I think this should be on for most cases.
 
 ---------
 DEBUGGING
