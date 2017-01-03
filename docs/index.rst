@@ -23,7 +23,23 @@ PROCESS FLOW
 2) System detects if there is single or multiple domains in the input
 3) System checks if recent cache already has a result and if yes moves to step NNN
 4) If there is no result in the cache the primary cycle starts 
-5) 
+5)
+
+
+run.sh
+|_ sitemind.sh 
+
+    |_ api-fetch.sh
+    
+        |_ alexa_data.sh
+        
+        |_
+        |_
+    |_
+    |_
+    |_
+    |_
+    |_
 
 
 -------------
