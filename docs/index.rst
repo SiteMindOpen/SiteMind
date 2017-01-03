@@ -15,16 +15,45 @@ SiteMind allows two different kinds of searches to be performed by the user:
 
 In both cases the system performs a series of operations resulting in up to 40 signals, which are then stored in a .csv file. Depending on the type of search, the result will then be returned either as a simple user interface, or a table with results for multiple sites. 
 
----------------
-PROCESS FLOW 
----------------
 
-1) User provides input 
-2) System detects if there is single or multiple domains in the input
-3) System checks if recent cache already has a result and if yes moves to step NNN
-4) If there is no result in the cache the primary cycle starts 
-5)            
-       
+-----------------------
+SITEMIND SCORING SYSTEM
+-----------------------
+
+The SiteMind scoring system takes widely accepted "red flags" from signals available from various data sources (see the sections below) and creates a single easy to understand score out of those flags. 
+
+The formula to calculate the score ranging from 0 to 100 is as follows: 
+
+100 - ((CHECKS FAILED / CHECKS TOTAL) * 100) = SiteMind SCORE
+
+The score consist of 10 "flags". 
+
++------------------------+---------------------------------------------------------+
+|                        |                                                         | 
+| VARIABLE NAME          | FAILS WHEN                                              |
++========================+=========================================================+
+| SCORE_CHECKS           | Not enough signals to perform 4 checks                  |
++------------------------+---------------------------------------------------------+
+| SCORE_UPSTREAM         | More than 90% of the traffic coming from TOP5 Upstream  |
++------------------------+---------------------------------------------------------+
+| SCORE_UPSTREAMCHECK    | No common sites in TOP5 Upstream                        |
++------------------------+---------------------------------------------------------+
+| SCORE_TRUST            | Web of Trust Trust score is less than 50                |
++------------------------+---------------------------------------------------------+
+| SCORE_TOPKEYWORDS      | More than 90% of the traffic coming from TOP5 Keywords  |
++------------------------+---------------------------------------------------------+
+| SCORE_SEARCH           | Less than 1% of traffic is coming from search           |
++------------------------+---------------------------------------------------------+
+| SCORE_PAGEVIEWS        | More than 8 pageviews per visit on average              |
++------------------------+---------------------------------------------------------+
+| SCORE_YEARS            | Domain was originally registered less than 2 years ago  |
++------------------------+---------------------------------------------------------+
+| SCORE_PRIVACY          | Domain uses whois privacy guard                         |
++------------------------+---------------------------------------------------------+
+| SCORE_BOUNCERATE       | Site bouncerate is less than 10% on average             |
++------------------------+---------------------------------------------------------+
+
+
 -------------
 DATA TAXONOMY
 -------------
@@ -153,6 +182,17 @@ SiteMind provides a fully automated method for the "gold standard" way of fetchi
 1) Gets to main record from the tld level registar including the registar that holds the sub-record 
 2) Gets the sub-record from the holding registar 
 
+---------------
+PROCESS FLOW 
+---------------
+
+1) User provides input 
+2) System detects if there is single or multiple domains in the input
+3) System checks if recent cache already has a result and if yes moves to step NNN
+4) If there is no result in the cache the primary cycle starts 
+5)            
+       
+
 ---------
 DEBUGGING
 ---------
@@ -196,3 +236,11 @@ The code is almost 100% bash and certain principles have been followed where pos
 - mininal comments - instead self-explaining code 
 
 It should be very easy for anyone with beginner+ level in bash to modify the code that is already there, to add new code to improve current functionality, or add completely new functionality. 
+
+
+------------------
+FUTURE DEVELOPMENT
+------------------
+
+- Make upstream sites clickable (yields a new search)
+- Check for native advertising being a major source of traffic
