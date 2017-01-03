@@ -153,6 +153,19 @@ SiteMind provides a fully automated method for the "gold standard" way of fetchi
 1) Gets to main record from the tld level registar including the registar that holds the sub-record 
 2) Gets the sub-record from the holding registar 
 
+---------
+DEBUGGING
+---------
+
+For **DATA related** debugging change production_version to debug_function from line 24 in bin/api-fetch.sh. This will help you to identify issues with one part of the data fetching cycle getting stuck. This should happen very rarely as it has been debugged a lot. 
+
+For **UI related** download the program folder to a local machine and run a PHP server locally. This way you will very easily see any error messages that are coming up when the UI is loaded.
+
+If you've setup properly, then you can easily see related error logs on the server-side using:: 
+
+       ./sm-monitor
+
+
 ---------------
 RUNNING LOCALLY
 ---------------
