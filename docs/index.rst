@@ -250,19 +250,20 @@ FUTURE DEVELOPMENT
 ADMIN FEATURES
 --------------
 
-In the environment of the host machine, include the following alias commands:
+In the environment of the host machine, include the following alias commands::
 
-alias sm-sync='/var/www/html/admin/bin/sync.sh'
-alias sm-user-list='cat /etc/apache2/.htpasswd | cut -d: -f1'
-alias sm-monitor='/var/www/html/admin/bin/monitor.sh'
-alias sm-user-new='/var/www/html/admin/bin/user-new.sh'
-alias sm-user-rm='/var/www/html/admin/bin/user-sh.sh'
-alias sm-commit='/var/www/html/admin/bin/commit.sh'
-alias sm-commit-version='cd ~/git/sitemind && /var/www/html/admin/bin/commit-version.sh'
-alias sm-commit-log='git log --oneline --decorate --color'
-alias sm-conf-nossl='vim /etc/apache2/sites-available/000-default.conf'
-alias sm-conf-ssl='vim /etc/apache2/sites-available/000-default-le-ssl.conf'
-alias sm-find-file='/var/www/html/admin/bin/sm-find-file.sh'
+       alias sm-sync='/var/www/html/admin/bin/sync.sh'
+       alias sm-user-list='cat /etc/apache2/.htpasswd | cut -d: -f1'
+       alias sm-monitor='/var/www/html/admin/bin/monitor.sh'
+       alias sm-user-new='/var/www/html/admin/bin/user-new.sh'
+       alias sm-user-rm='/var/www/html/admin/bin/user-sh.sh'
+       alias sm-commit='/var/www/html/admin/bin/commit.sh'
+       alias sm-commit-version='cd ~/git/sitemind && /var/www/html/admin/bin/commit-version.sh'
+       alias sm-commit-log='git log --oneline --decorate --color'
+       alias sm-conf-nossl='vim /etc/apache2/sites-available/000-default.conf'
+       alias sm-conf-ssl='vim /etc/apache2/sites-available/000-default-le-ssl.conf'
+       alias sm-find-file='/var/www/html/admin/bin/sm-find-file.sh'
+
 Usually you can find the file from ~/ under the name .bashrc. Add the above lines in to the file and next time you login to the host, the following commands will be available anywhere in your system:
 
 In a Linux system you can do this typically by::
