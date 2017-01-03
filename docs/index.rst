@@ -188,45 +188,37 @@ PROCESS FLOW
 
 
 1) User provides input through the search field in the UI
-       -> form_process.php
-       -> run.sh 
+       - > form_process.php
+       - > run.sh 
 
 2) run.sh checks if there query is empty, single domain, or multiple comma separated domains
-       -> sitemind.sh ("controller") 
+       - > sitemind.sh ("controller") 
 
 3) Regardless if it's single or multi search the program cycle proceeds
-       -> bin/api-fetch.sh
-              -> bin/alexa_data.sh
-              -> bin/whois_data.sh
-              -> bin/wot_data.sh
-                     -> wo_data.py
+       - > bin/api-fetch.sh
+              - > bin/alexa_data.sh
+              - > bin/whois_data.sh
+              - > bin/wot_data.sh
+                     - > wo_data.py
 
 4) Using the data in various .temp and .bash files a usable data format is created
-       -> bin/api-build.sh 
+       - > bin/api-build.sh 
 
 5) The data is provided in a comma separated format for multi searches
-       -> data-export.sh
+       - > data-export.sh
 
 6) The data is further formatted for the UI building process 
-       -> data-cms.sh
+       - > data-cms.sh
 
 7) The UIs are built each in a separate script 
-       -> cms/cms-scorecard.sh
-       -> cms/cms-traffic.sh
-       -> cms/cms-overview.sh
-       -> cms/cms-upstream.sh
+       - > cms/cms-scorecard.sh
+       - > cms/cms-traffic.sh
+       - > cms/cms-overview.sh
+       - > cms/cms-upstream.sh
        
 8) A finish cleanup is performed 
-       -> finish-cleanup.sh
+       - > finish-cleanup.sh
  
-
-
-1) User provides input 
-2) System detects if there is single or multiple domains in the input
-3) System checks if recent cache already has a result and if yes moves to step NNN
-4) If there is no result in the cache the primary cycle starts 
-5)            
-       
 
 ---------
 DEBUGGING
