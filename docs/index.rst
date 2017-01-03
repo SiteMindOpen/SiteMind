@@ -27,21 +27,26 @@ PROCESS FLOW
 
 
 run.sh
-|_ sitemind.sh 
-
-    |_ api-fetch.sh
-    
-        |_ alexa_data.sh
+    sitemind.sh 
+        api-fetch.sh
+            alexa_data.sh
+            whois_data.sh
+            wot_data.sh
+                wo_data.py
+            env-cleanup.sh
+            api-build.sh
+            env-cleanup.sh
+            score-compute.sh
+            data-export.sh
+            data-cms.sh
+            
+            cms-scorecard.sh
+            cms-overview.sh
+            cms-traffic.sh
         
-        |_
-        |_
-    |_
-    |_
-    |_
-    |_
-    |_
-
-
+                
+            
+       
 -------------
 DATA TAXONOMY
 -------------
