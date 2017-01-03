@@ -153,6 +153,14 @@ SiteMind provides a fully automated method for the "gold standard" way of fetchi
 1) Gets to main record from the tld level registar including the registar that holds the sub-record 
 2) Gets the sub-record from the holding registar 
 
+---------------
+RUNNING LOCALLY
+---------------
+
+       sudo php -S 127.0.0.1:80 && /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --app="http://127.0.0.1/dev/index.html" --window-size="1000x800"
+
+
+
 ------------------
 CODING CONVENTIONS
 ------------------
