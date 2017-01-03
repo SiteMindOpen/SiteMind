@@ -242,5 +242,65 @@ It should be very easy for anyone with beginner+ level in bash to modify the cod
 FUTURE DEVELOPMENT
 ------------------
 
+- Create setup process where server is configured including SSL and a conf file is created at ~/.sitemindrc
 - Make upstream sites clickable (yields a new search)
 - Check for native advertising being a major source of traffic
+
+--------------
+ADMIN FEATURES
+--------------
+
+In the environment of the host machine, include the following alias commands:
+
+alias sm-sync='/var/www/html/admin/bin/sync.sh'
+alias sm-user-list='cat /etc/apache2/.htpasswd | cut -d: -f1'
+alias sm-monitor='/var/www/html/admin/bin/monitor.sh'
+alias sm-user-new='/var/www/html/admin/bin/user-new.sh'
+alias sm-user-rm='/var/www/html/admin/bin/user-sh.sh'
+alias sm-commit='/var/www/html/admin/bin/commit.sh'
+alias sm-commit-version='cd ~/git/sitemind && /var/www/html/admin/bin/commit-version.sh'
+alias sm-commit-log='git log --oneline --decorate --color'
+alias sm-conf-nossl='vim /etc/apache2/sites-available/000-default.conf'
+alias sm-conf-ssl='vim /etc/apache2/sites-available/000-default-le-ssl.conf'
+alias sm-find-file='/var/www/html/admin/bin/sm-find-file.sh'
+Usually you can find the file from ~/ under the name .bashrc. Add the above lines in to the file and next time you login to the host, the following commands will be available anywhere in your system:
+
+In a Linux system you can do this typically by::
+
+       vim .bashrc
+
+
+**sm-sync**
+
+Syncs all the user accounts with /dev.
+
+**sm-user-list**
+
+Prints out a list of user accounts.
+
+**sm-monitor**
+
+Creates a report out of access and error logs from the on going day's logs.
+
+**sm-user-new**
+
+Creates a new user in to the system and prints out a randomly generated password for the user.
+
+EXAMPLE USAGE (where we want to create a user 'john'::
+
+       sm-newuser john
+
+**sm-user-rm**
+
+Removes a user and all associated files from the system (Use with caution!).
+
+SERVER CONFIGURATION
+^^^^^^^^^^^^^^^^^^^^
+
+**sm-conf-nossl**
+
+Opens up the no ssl (port 80) apache configuration file in vim editor.
+
+**sm-conf-ssl**
+
+Opens up the ssl (port 443) apache configuration file in vim editor.
