@@ -157,9 +157,17 @@ SiteMind provides a fully automated method for the "gold standard" way of fetchi
 RUNNING LOCALLY
 ---------------
 
-       sudo php -S 127.0.0.1:80 && /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --app="http://127.0.0.1/dev/index.html" --window-size="1000x800"
+You have to run a PHP server from the Sitemind folder to be able to make queries from the UI::
 
+       php -s http://127.0.0.1:8000
 
+If you're a mac user, go the Sitemind folder and exexcute the below command::
+
+       sudo php -S 127.0.0.1:8000 && /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --app="http://127.0.0.1:8000/dev/index.html" --window-size="1000x800"
+
+Alternatively you can run from the command line (in the Sitemind folder)::
+
+       ./run.sh domain.com
 
 ------------------
 CODING CONVENTIONS
