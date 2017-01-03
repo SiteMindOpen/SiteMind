@@ -125,3 +125,34 @@ NOTE: Different naming may be used in the user interfaces, and this is easily ch
 +------------------------+-------------+---------+
 | WOT_TRUST              | weboftrust  | 40      |
 +------------------------+-------------+---------+
+
+
+------------
+DATA SOURCES
+------------
+
+While adding virtually any additional data soruce, SiteMind relies on three different data source by default. 
+
+- Alexa
+- Web of Trust
+- WHOIS 
+
+**ALEXA***
+
+It is recommended to use the paid Alexa API. SiteMind uses web scraping method by default for demo and prototyping purpose. 
+
+**Web of Trust**
+
+Web of Trust data is fetched using the WOT API, which provides a rich data taxonomy and is free to use to a substantial level of daily usage. 
+
+More information on the WOT API can be found here: https://www.mywot.com/wiki/API
+
+You can apply for your own API key here: https://www.mywot.com/en/reputation-api
+
+**WHOIS**
+
+SiteMind provides a fully automated method for the "gold standard" way of fetching WHOIS records. 
+
+1) Gets to main record from the tld level registar including the registar that holds the sub-record 
+2) Gets the sub-record from the holding registar 
+
