@@ -23,29 +23,7 @@ PROCESS FLOW
 2) System detects if there is single or multiple domains in the input
 3) System checks if recent cache already has a result and if yes moves to step NNN
 4) If there is no result in the cache the primary cycle starts 
-5)
-
-
-run.sh
-    sitemind.sh 
-        api-fetch.sh
-            alexa_data.sh
-            whois_data.sh
-            wot_data.sh
-                wo_data.py
-            env-cleanup.sh
-            api-build.sh
-            env-cleanup.sh
-            score-compute.sh
-            data-export.sh
-            data-cms.sh
-            
-            cms-scorecard.sh
-            cms-overview.sh
-            cms-traffic.sh
-        
-                
-            
+5)            
        
 -------------
 DATA TAXONOMY
