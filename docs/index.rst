@@ -298,8 +298,8 @@ Ubuntu 16.04::
     systemctl apache restart
 
 
-Setup https with letsencrypt 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+HTTPS WITH LETSENCRYPT
+^^^^^^^^^^^^^^^^^^^^^^
 
 Letencrypt makes it incredibly easy (and fast) to setup functional https for your site. 
 
@@ -387,7 +387,6 @@ Usually you can find the file from ~/ under the name .bashrc. Add the above line
 In a Linux system you can do this typically by::
 
        vim .bashrc
-
 
 **sm-sync**
 
