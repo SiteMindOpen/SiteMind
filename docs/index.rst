@@ -218,7 +218,31 @@ PROCESS FLOW
        
 8) A finish cleanup is performed 
        - > finish-cleanup.sh
- 
+
+-------------------
+DIRECTORY STRUCTURE
+-------------------
+
+NOTE: In a multi-user system, each user has a self-contained replica of the program folder in the program root. 
+
++-----------------+------------------------------+
+|                 |                              |
+| FOLDER          |                              |
++========================+=============+=========+
+| /               | Sitemind program root        |
++------------------------------------------------+
+| /bin            | Where non UI scripts reside  |
++------------------------------------------------+
+| /cms            | Where the UI scripts reside  |
++------------------------------------------------+
+| /cms/graphics   | Images for the UI            |
++------------------------------------------------+
+| /cms/js         | Javascripts for the UI       |
++------------------------------------------------+
+| /cms/style      | Style sheets for the UI      |
++------------------------------------------------+
+| /cms/templates  | Header and Footer for UI     |
++------------------------------------------------+
 
 ---------
 DEBUGGING
