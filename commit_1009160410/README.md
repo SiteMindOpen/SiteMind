@@ -48,6 +48,8 @@ The following installation instructions have been tested on Ubuntu 14.04 clean d
 	sudo apt-get install -y parallel 
 	sudo apt-get install -y num-utils
 	sudo apt-get install -y bc
+	sudo apt-get install -y python
+	sudo apt-get install -y whois
 
 If you plan to contribute to the code: 
 
@@ -56,10 +58,12 @@ If you plan to contribute to the code:
 #### Getting the files and setting it up
 
 	wget https://github.com/SiteMindOpen/SiteMind/archive/master.zip
+	mkdir ~/Sitemind-dev && cd ~/Sitemind-dev
+	wget https://github.com/SiteMindOpen/SiteMind/archive/master.zip
 	unzip master.zip
-	sudo rsync -av ~/SiteMind-master/ /var/www/html
+	sudo rsync -av ~/Sitemind-dev/ /var/www/html
 
-	chown -R www-data:www-data /var/www/html && chmod -R g+rw /var/www/html
+	sudo chown -R www-data:www-data /var/www/html && sudo chmod -R g+rw /var/www/html
 
 After the initial setup, as long as you create new users with SiteMind command line command 'sm-user-new', permissions will be handled automatically and is not something you need to think about. 
 
