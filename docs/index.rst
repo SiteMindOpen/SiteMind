@@ -8,11 +8,11 @@ Domain research tool targeting media planners and reseaerchers, specifically bui
 FEATURE HIGHLIGHTS
 ------------------
 
-intuitive 'buy score' system for website rating
-search any domain
-returns result usually in 1 to 2 seconds
-up to 150 data points per site from 5 different sources
-easy to use API with ready end-points for all common languages
+- intuitive 'buy score' system for website rating
+- search any domain
+- returns result usually in 1 to 2 seconds
+- up to 150 data points per site from 5 different sources
+- easy to use API with ready end-points for all common languages
 
 
 
@@ -363,6 +363,7 @@ FUTURE DEVELOPMENT
 - Make upstream sites clickable (yields a new search)
 - Check for native advertising being a major source of traffic
 - Add a 30 day cache to avoid redundant searches
+- Make one-page report for export available with all the signals
 
 --------------
 ADMIN FEATURES
