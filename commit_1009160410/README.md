@@ -43,7 +43,8 @@ The following installation instructions have been tested on Ubuntu 14.04 clean d
 
 	sudo apt-get update
 	sudo apt-get install -y apache2
-	sudo apt-get install -y php5 
+	sudo apt-get install -y php
+	sudo apt-get install libapache2-mod-php
 	sudo apt-get install -y unzip
 	sudo apt-get install -y parallel 
 	sudo apt-get install -y num-utils
