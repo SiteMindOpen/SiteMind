@@ -47,6 +47,10 @@ The following installation instructions have been tested on Ubuntu 14.04 clean d
 	sudo apt-get install -y unzip
 	sudo apt-get install -y parallel 
 	sudo apt-get install -y num-utils
+	sudo apt-get install -y bc
+
+If you plan to contribute to the code: 
+
 	sudo apt-get install -y git 
 
 #### Getting the files and setting it up
