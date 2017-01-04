@@ -82,6 +82,8 @@ Ubuntu 16.04:
 
     systemctl apache restart
 
+Before moving on, make sure that both Apache and PHP are running. 
+
 
 #### Setup https with letsencrypt 
 
