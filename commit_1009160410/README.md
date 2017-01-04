@@ -70,7 +70,7 @@ After the initial setup, as long as you create new users with SiteMind command l
 
 #### Creating an admin user
 
-	PASSWORD=$(openssl rand -base64 20); htpasswd ./etc/apache2/.htpasswd -cbB admin "$PASSWORD"; echo -e "Your password is $PASSWORD";
+	PASSWORD=$(openssl rand -base64 20); htpasswd -cbB /etc/apache2/.htpasswd admin "$PASSWORD"; echo -e "Your password is $PASSWORD";
 
 #### Restart apache
 
@@ -96,6 +96,13 @@ Note that for the below to work, you need to have a valid domain name that is po
 	./letsencrypt-auto --apache -d yoursite.com
 
 NOTE: as part of the setup process, there will be a prompt asking if you want to redirect all requests to https. I think this should be on for most cases.
+
+#### Server configuration
+
+- change the VPN credentials 
+- change the sitename in admin/user-new.sh
+sudo htpasswd -c /etc/apache2/.htpasswd sammy
+
 
 
 #### Environment variables for SiteMind
