@@ -15,7 +15,6 @@ FEATURE HIGHLIGHTS
 - easy to use API with ready end-points for all common languages
 
 
-
 --------------------
 OVERVIEW OF FUNCTION
 --------------------
@@ -364,6 +363,7 @@ FUTURE DEVELOPMENT
 - Check for native advertising being a major source of traffic
 - Add a 30 day cache to avoid redundant searches
 - Make one-page report for export available with all the signals
+- time-limited account creation
 
 --------------
 ADMIN FEATURES
