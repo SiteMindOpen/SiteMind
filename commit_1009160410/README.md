@@ -12,6 +12,17 @@ Domain research tool targeting media planners and reseaerchers, specifically bui
 - up to 150 data points per site from 5 different sources
 - easy to use API with ready end-points for all common languages
 
+### SECURITY & ANONYMITY
+
+- SSL
+- brypt hashed passwords 
+- .htpasswd authentication
+- force strong auto-generated passwords
+- zero records from your searches are stored anywhere 
+
+The key focus in developing Sitemind was simplicity, security and anonymity. 
+
+
 ### CONTENTS OF THE PACKAGE 
 
 Everything goes in to /var/www/html or whatever is your public html directory. 
@@ -101,9 +112,6 @@ NOTE: as part of the setup process, there will be a prompt asking if you want to
 
 - change the VPN credentials 
 - change the sitename in admin/user-new.sh
-sudo htpasswd -c /etc/apache2/.htpasswd sammy
-
-
 
 #### Environment variables for SiteMind
 
