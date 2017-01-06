@@ -18,7 +18,8 @@ Domain research tool targeting media planners and reseaerchers, specifically bui
 - brypt hashed passwords 
 - .htpasswd authentication
 - force strong auto-generated passwords
-- zero records from your searches are stored anywhere 
+- zero records from your searches are stored anywhere
+- servers logs are destroyed every 24 hours 
 
 The key focus in developing Sitemind was simplicity, security and anonymity. 
 
