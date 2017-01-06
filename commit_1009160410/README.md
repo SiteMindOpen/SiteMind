@@ -113,6 +113,14 @@ NOTE: as part of the setup process, there will be a prompt asking if you want to
 - change the VPN credentials 
 - change the sitename in admin/user-new.sh
 
+You have to add one line to your sudoers file: 
+
+	vim /etc/sudoers
+
+And then add this line: 
+
+	www-data	ALL=(ALL:ALL) NOPASSWD: /var/www/html/*/run.sh
+
 #### Environment variables for SiteMind
 
 Add the following lines to your .bashrc file. 
