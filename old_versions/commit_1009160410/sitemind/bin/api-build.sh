@@ -1,7 +1,5 @@
 #!/bin/bash
 	
-	cat whois.bash >> env.bash
-	
 	source env.bash
 
 	AL=(alexa_data.temp);					# handler for alexa data
@@ -18,8 +16,8 @@
 	ALEXA_INLINKS=$(grep "font-4 box1-r" $AL | cut -d '>' -f2 | cut -d '<' -f1 | sed 's/,//g'); echo -e "ALEXA_INLINKS=$ALEXA_INLINKS" >> env.bash
 	ALEXA_LOADSPEED=$(grep "loadspeed-panel-content" $AL | cut -d '(' -f2 | cut -d ')' -f1 | sed 's/[a-z]//g' | sed 's/\ S//' | tr ' ' '\n' | sort -u); echo -e "ALEXA_LOADSPEED=$ALEXA_LOADSPEED" >> env.bash
 
-	#ALEXA_MALES=$(grep "Males are" $AL | cut -d '>' -f3 | cut -d '<' -f1 | sed 's/-represented//'); echo -e "ALEXA_MALES=$ALEXA_MALES" >> env.bash
-	#ALEXA_FEMALES=$(grep "Females are" $AL | cut -d '>' -f3 | cut -d '<' -f1 | sed 's/-represented//'); echo -e "ALEXA_FEMALES=$ALEXA_FEMALES" >> env.bash
+	ALEXA_MALES=$(grep "Males are" $AL | cut -d '>' -f3 | cut -d '<' -f1 | sed 's/-represented//'); echo -e "ALEXA_MALES=$ALEXA_MALES" >> env.bash
+	ALEXA_FEMALES=$(grep "Females are" $AL | cut -d '>' -f3 | cut -d '<' -f1 | sed 's/-represented//'); echo -e "ALEXA_FEMALES=$ALEXA_FEMALES" >> env.bash
 
 	ALEXA_UPSTREAM1N=$(cut -d ' ' -f1 $UP | sed '1!d'); echo -e "ALEXA_UPSTREAM1N=$ALEXA_UPSTREAM1N" >> env.bash
 	ALEXA_UPSTREAM2N=$(cut -d ' ' -f1 $UP | sed '2!d'); echo -e "ALEXA_UPSTREAM2N=$ALEXA_UPSTREAM2N" >> env.bash
@@ -53,13 +51,7 @@ whois_privacy(){
 }
 
 	WHOIS_PRIVACY=$(whois_privacy); echo -e "WHOIS_PRIVACY=$WHOIS_PRIVACY" >> env.bash;
-
-	CREATION_YEAR=$(echo $CREATIONDATE | cut -d '-' -f3)
-	THIS_YEAR=$(date +%Y)
-	WHOIS_YEARS=$[$THIS_YEAR - $CREATION_YEAR]
-	echo "WHOIS_YEARS=$WHOIS_YEARS" >> env.bash
-
-	# WHOIS_YEARS=$(CREATED=$(echo $CREATIONDATE | cut -d '-' -f1); YEAR=$(date +%Y); expr $YEAR - $CREATED 2>/dev/null); echo -e "WHOIS_YEARS=$WHOIS_YEARS" >> env.bash
+	WHOIS_YEARS=$(CREATED=$(echo $CREATION_DATE | cut -d '-' -f1); YEAR=$(date +%Y); expr $YEAR - $CREATED 2>/dev/null); echo -e "WHOIS_YEARS=$WHOIS_YEARS" >> env.bash
 
 	if [ -n "$SW_2016_04_01" ]; then
 		TRAFFIC_TREND=$(echo -e "scale=2; ($SW_2016_07_01 - $SW_2016_03_01) / $SW_2016_03_01" | bc -l | tr -d '.' | sed 's/$/%/'); echo -e "TRAFFIC_TREND=$TRAFFIC_TREND" >> env.bash
@@ -80,4 +72,11 @@ whois_privacy(){
         if [ -n "$WO_CHILDSAFETY" ]; then
                 WOT_CHILDSAFETY=$(echo $WO_CHILDSAFETY | cut -d, -f1); echo -e "WOT_CHILDSAFETY=$WOT_CHILDSAFETY" >> env.bash
         fi
+	
+	WOT_TRUSTC=$(echo $WO_TRUST | cut -d, -f2); WOT_CHILDSAFETYC=$(echo $WO_CHILDSAFETY | cut -d, -f2)
+	if [ -n "$WOT_TRUSTC" ]; then
+		if [ -n "$WOT_CHILDSAFETYC" ]; then
+			WOT_CONFIDENCE=$(expr ($WOT_TRUSTC + $WO_CHILDSAFETYC) / 2); echo -e "WOT_CONFIDENCE=$WOT_CONFIDENCE" >> env.bash
+		fi
+	fi
 
