@@ -1,3 +1,7 @@
-# start mysql
+## setting up dev for v2
+
+### start mysql
 mysql.server start
 
+### start php server 
+php -S 0.0.0.0:8000
