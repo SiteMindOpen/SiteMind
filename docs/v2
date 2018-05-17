@@ -5,3 +5,7 @@ mysql.server start
 
 ### start php server 
 php -S 0.0.0.0:8000
+
+### todo
+- unify all the javascripts in to one 
+- clean up the table design 
