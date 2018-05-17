@@ -1,0 +1,3 @@
+# start mysql
+mysql.server start
+
